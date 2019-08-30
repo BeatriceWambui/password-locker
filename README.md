@@ -6,8 +6,7 @@ Wachira Beatrice Wambui
 Kenyan Citizen
 Student Moringa School
 
-##Project description
-
+## Project description
 This is a python repository that works as a password-locker for a user to generate passwords for his/her accounts.The user is also in a position to generate the passwords for themselves and dictate their lengths.
 
 ## Live Link
