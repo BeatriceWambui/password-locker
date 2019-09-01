@@ -30,14 +30,14 @@ class Credentials:
             Credentials.credentials_list.remove(self)
 
         @classmethod
-        def find_by_name(cls,first_name):
+        def find_by_name(class,first_name):
             '''
             Method that takes in a name and returns a contact that matches that
             Args:
                 name: first name to search for
                 Returns: Password of person that matches the name.
             '''
-            for credentials in cls.credentials_list:
+            for credentials in class.credentials_list:
                 if credentials.first_name ==first_name:
                     return credentials
 
@@ -50,7 +50,7 @@ class Credentials:
             Returns:
             Boolean: True or false depending on if the password account exists
             '''
-            for credentials in cls.credentials_list:
+            for credentials in class.credentials_list:
                 if credentials.first_name == first_name:
                     return True
             return False
