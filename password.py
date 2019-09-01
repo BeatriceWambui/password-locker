@@ -63,7 +63,7 @@ class Credentials:
 
 class User:
     '''
-    Class that generates new instancesof User
+    Class that generates new instances of User
     '''
     user_list = [] # list of usere to be stored here
 
