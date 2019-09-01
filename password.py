@@ -58,5 +58,8 @@ class Password:
 
         @classmethod
         def copy_password(cls,password):
-            password_found = Password.find_by_password(password_input)
+            password_found = Password.find_by_password(password)
             pyperclip.copy(password_found.password)
+
+if __name__ == '__main__':
+    unittest.main() # provides a command line interface that collects all the tests methods and executes them
