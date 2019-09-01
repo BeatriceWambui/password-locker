@@ -82,7 +82,7 @@ class TestCredentials(unitetest.TestCase):
         '''
         test case to test if the credentials object is saved into the credentials list.
         '''
-        self.new_credential.save_details()
+        self.new_credentials.save_details()
         self.assertEqual(len(Credentials.credentials_list),1)
     def tearDown(self):
         '''
@@ -95,6 +95,16 @@ class TestCredentials(unitetest.TestCase):
         list
         '''
         self.new_credentials.save_details()
-        test_credentials = Credentials("Twitter","beatricewambui","gladweleva")
+        test_credentials = Credentials("Facebook","beatricewambui","gladweleva")
         test_credentials.save_details()
         self.assertEqual(len(Credentials.credentials_list),2)
+    def test_delete_credentials(self):
+        '''
+        test method to test if we can remove an account credentials from our credentials_list
+        '''
+        self.new_credentials.save_details()
+        test_credentials = Credentials("Facebook","beatricewambui","gladweleva")
+        test_credentials.save_details()
+        the_credentials = Credentials.find_credentials("Facebook")
+        self.assertEqual(the_credentials.account,test_credential.account)
+        
