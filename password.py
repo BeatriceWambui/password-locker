@@ -5,15 +5,14 @@ class Credentials:
     This is a class that generates new instances of passwords
     '''
 
-        credentials_list = [] # Empty array of password list
+    credentials_list = [] # Empty array of password list
 
-    def __init__ (self,account,first_name,password):
+    def __init__ (self,account,cls,first_name,password):
         #docstring removed for simplicity
 
+        self.account = account
         self.first_name = first_name
-        self.last_name = last_name
         self.password = password
-
         #__init__ nmethod that helps us define propreties for our objects.
 
         def save_credentials(self):
@@ -21,7 +20,7 @@ class Credentials:
             save_password method saves password objects into password_list
             '''
 
-            credentials.credentials_list.append(self)
+            Credentials.credentials_list.append(self)
 
         def delete_credentials(self):
             '''
@@ -38,9 +37,9 @@ class Credentials:
                 name: first name to search for
                 returns: Password of person that matches the name.
                 '''
-                for credentials in cls.credentials_list:
-                    if credentials.first_name ==first_name:
-                        return credentials
+            for credentials in cls.credentials_list:
+                if credentials.first_name ==first_name:
+                    return credentials
 
         @classmethod
         def credentials_exist(cls,first_name):
@@ -76,15 +75,9 @@ class User:
 
     def save_user(self):
         '''
-        saves a user
+        A method that saves a new user into the users list
         '''
         User.user_list.append(self)
-
-    def delete_user(self):
-        '''
-        deletes a user account that exists
-        '''
-        User.user_list.remove(self)
 
     @classmethod
     def find_user(cls,username):
@@ -94,7 +87,14 @@ class User:
         for user in cls.user_list:
             if user.username == username:
                 return user
-
+    @classmethod
+    def display_user(cls):
+        return cls.user_list
+    def delete_user(self):
+        '''
+        deletes a user account that exists
+        '''
+        User.user_list.remove(self)
 
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 import unittest # Importing the unittest module
- from password import Credentials # Importing the credentials class
- from password import User # importing the user class
+from password import Credentials # Importing the credentials class
+from password import User # importing the user class
 ###########################
 
 class TestClass(unittest.TestCase):
@@ -61,7 +61,7 @@ class TestClass(unittest.TestCase):
         self.new_user.delete_user()
         self.assertEqual(len(User.user_list),1)
 
-class TestCredentials(unitetest.TestCase):
+class TestCredentials(unittest.TestCase):
     '''
     A test class that defines test cases for credentials class
     '''
@@ -78,7 +78,7 @@ class TestCredentials(unitetest.TestCase):
         self.assertEqual(self.new_credentials.account,'Gmail')
         self.assertEqual(self.new_credentials.first_name,'BeatriceWambui')
         self.assertEqual(self.new_credentials.password,'E*7@wach')
-    def save_credentials-test(self):
+    def save_credentials_test(self):
         '''
         test case to test if the credentials object is saved into the credentials list.
         '''
@@ -107,7 +107,7 @@ class TestCredentials(unitetest.TestCase):
         test_credentials.save_details()
         the_credentials = Credentials.find_credentials("Facebook")
         self.assertEqual(the_credentials.account,test_credentials.account)
-   def test_find_credentials(self):
+    def test_find_credentials(self):
        '''
        test to check if we can find a credential entry by account name and display
        the details of the credentials_list
@@ -117,7 +117,7 @@ class TestCredentials(unitetest.TestCase):
        test_credentials.save_details()
        the_credentials =Credentials.find_credentials("Facebook")
        self.assertEqual(the_credentials.account,test_credentials.account)
-   def test_credentials_exist(self):
+    def test_credentials_exist(self):
        '''
        test to check if we can return a true or false based on whetherwe find or
        cant find the credentials.
@@ -125,10 +125,10 @@ class TestCredentials(unitetest.TestCase):
        self.new_credentials.save_details()
        the_credentials = Credentials.if_credentials_exist("Facebook")
        self.assertEqual(credentials_is_found)
-   def test_display_credentials(self):
+    def test_display_credentials(self):
         '''
         method that displays all the credentials that has been saved by the usere
         '''
-       self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
-if __name__ == "__main__"
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+if __name__ == '__main__':
     unittest.main()
