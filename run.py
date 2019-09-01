@@ -20,5 +20,20 @@ def check_existing_password(first_name):
     '''
     function that checks if password exists with that name and returns a Boolean
     '''
-    
+    return Credentials.password_exist(first_name)
+def display_password():
+    '''
+    function that returns all saved passwords
+    '''
+    return Credential.display_passwords()
+
+def main():
+    print("This is your password.Enter username ")
+    user_name = input()
+    print({user_name})
+
+    print('\n')
+        while True:
+            print(use the following shord codes to cc - create a new account,dl - deletepassword, disp - display accounts,
+            ex -ext the password account list)
 
