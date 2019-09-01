@@ -7,7 +7,7 @@ class Credentials:
 
     credentials_list = [] # Empty array of password list
 
-    def __init__ (self,account,cls,first_name,password):
+    def __init__ (self,account,first_name,password):
         #docstring removed for simplicity
 
         self.account = account
@@ -35,11 +35,11 @@ class Credentials:
             Method that takes in a name and returns a contact that matches that
             Args:
                 name: first name to search for
-                returns: Password of person that matches the name.
-                '''
-                for credentials in class.credentials_list:
-                    if credentials.first_name ==first_name:
-                        return credentials
+                Returns: Password of person that matches the name.
+            '''
+            for credentials in cls.credentials_list:
+                if credentials.first_name ==first_name:
+                    return credentials
 
         @classmethod
         def credentials_exist(cls,first_name):
@@ -50,14 +50,14 @@ class Credentials:
             Returns:
             Boolean: True or false depending on if the password account exists
             '''
-            for credentials in class.credentials_list:
+            for credentials in cls.credentials_list:
                 if credentials.first_name == first_name:
                     return True
             return False
 
         @classmethod
         def copy_password(cls,password):
-            credentials_found = Credentials.find_by_password(password)
+            credentials_found = Credentials.find_by_first_name(first_name)
             pyperclip.copy(credentials_found.password)
 
 class User:

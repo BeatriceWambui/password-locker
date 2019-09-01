@@ -1,3 +1,5 @@
+import unittest
+import pyperclip
 from password import Credentials
 from password import User
 def create_credentials(account,first_name,cls,password):
@@ -55,9 +57,9 @@ def main():
 
                 print("account")
                 account = input()
-                save_credentials(create_credentials(first_name,account,passord)) # create and save new contact.
+                save_credentials(create_credentials(first_name,account,password)) # create and save new contact.
                 print ('\n')
-                print(f"New Credentials {first_name} {passord} created")
+                print(f"New Credentials {first_name} {password} created")
                 print ('\n')
             elif short_code == 'dc':
 
