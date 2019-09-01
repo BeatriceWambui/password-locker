@@ -56,4 +56,7 @@ class Password:
                     return True
             return False
 
-        
+        @classmethod
+        def copy_password(cls,password):
+            password_found = Password.find_by_password(password_input)
+            pyperclip.copy(password_found.password)
