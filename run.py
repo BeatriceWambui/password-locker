@@ -1,10 +1,10 @@
 from password import Credentials
 from password import User
-def create_credentials(account,first_name,credentials,cls):
+def create_credentials(account,first_name,cls,password):
     ''' 
-    function to create a new credential
+    function to create a new credentials
     '''
-    new_credentials = Credentials(account,first_name,credentials,cls) 
+    new_credentials = Credentials(account,first_name,password) 
     return new_credentials
 def save_credentials(credentials):
     '''
@@ -20,7 +20,7 @@ def find_credentials(password):
     '''
     function that finds credentials by password
     '''
-    return Credential.find_by_password(password)
+    return Credentials.find_by_password(password)
 def check_existing_credentials(first_name):
     '''
     function that checks if credentials exists with that name and returns a Boolean
@@ -30,7 +30,7 @@ def display_credentials():
     '''
     function that returns all saved credentials
     '''
-    return Credential.display_credentials()
+    return Credentials.display_credentials()
 
 def main():
     print("This is your credentials.Enter username ")
@@ -41,7 +41,7 @@ def main():
     while True:
             print("Use the following short codes : cc - create a new account,dc - display credentials,fc -find a contact, ex -exit the contact list")
             
-            shorl_code = input().lower()
+            short_code = input().lower()
 
             if short_code == 'cc':
                 print("New Credentials")
@@ -92,7 +92,7 @@ def main():
             elif short_code == "ex":
                             print("Thankyou")
                             break
-             else:
+            else:
                             print("I really didn't get that. Please use the short codes")
 
 

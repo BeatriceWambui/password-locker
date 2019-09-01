@@ -37,9 +37,9 @@ class Credentials:
                 name: first name to search for
                 returns: Password of person that matches the name.
                 '''
-            for credentials in cls.credentials_list:
-                if credentials.first_name ==first_name:
-                    return credentials
+                for credentials in class.credentials_list:
+                    if credentials.first_name ==first_name:
+                        return credentials
 
         @classmethod
         def credentials_exist(cls,first_name):
@@ -50,7 +50,7 @@ class Credentials:
             Returns:
             Boolean: True or false depending on if the password account exists
             '''
-            for credentials in cls.credentials_list:
+            for credentials in class.credentials_list:
                 if credentials.first_name == first_name:
                     return True
             return False
