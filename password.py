@@ -47,7 +47,7 @@ class Credentials:
             '''
             Method that checks if a password account exists from the password list.
             Args:
-            name: Furst na,e to search if it exists
+            name: First name to search if it exists
             Returns:
             Boolean: True or false depending on if the password account exists
             '''
@@ -59,7 +59,7 @@ class Credentials:
         @classmethod
         def copy_password(cls,password):
             credentials_found = Credentials.find_by_password(password)
-            pyperclip.copy(password_found.password)
+            pyperclip.copy(credentials_found.password)
 
 
 
