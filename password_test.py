@@ -89,4 +89,12 @@ class TestCredentials(unitetest.TestCase):
         method that does clean up after each test case has run.
         '''
         Credentials.credentials_list=[]
-    def test_save_many
+    def test_save_many_accounts(self):
+        '''
+        test to check if we can save multiple credentials objects to our credentials
+        list
+        '''
+        self.new_credentials.save_details()
+        test_credentials = Credentials("Twitter","beatricewambui","gladweleva")
+        test_credentials.save_details()
+        self.assertEqual(len(Credentials.credentials_list),2)
