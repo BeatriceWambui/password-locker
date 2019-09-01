@@ -1,40 +1,40 @@
-from password import Credentials
-from password import User
-def create_credentials(account,first_name,password,cls):
+from credentials import Credentials
+from credentials import User
+def create_credentials(account,first_name,credentials,cls):
     ''' 
     function to create a new credential
     '''
-    new_credentials = Credentials(account,first_name,password,cls) 
-    return new_password
-def save_password(password):
+    new_credentials = Credentials(account,first_name,credentials,cls) 
+    return new_credentials
+def save_credentials(credentials):
     '''
-    function to create a new password for the user
+    function to create a new credentials for the user
     '''
-    password.save_password()
-def delete_password(password):
+    credentials.save_credentials()
+def delete_credentials(credentials):
     '''
     function to delete aa pasword for the user
     '''
-    password.delete_password():
-def check_existing_password(first_name):
+    credentials.delete_credentials():
+def check_existing_credentials(first_name):
     '''
-    function that checks if password exists with that name and returns a Boolean
+    function that checks if credentials exists with that name and returns a Boolean
     '''
-    return Credentials.password_exist(first_name)
-def display_password():
+    return Credentials.credentials_exist(first_name)
+def display_credentials():
     '''
-    function that returns all saved passwords
+    function that returns all saved credentialss
     '''
-    return Credential.display_passwords()
+    return Credential.display_credentialss()
 
 def main():
-    print("This is your password.Enter username ")
+    print("This is your credentials.Enter username ")
     user_name = input()
-    print(f"Hello {user_name} This is your new password")
+    print(f"Hello {user_name} This is your new credentials")
 
     print('\n')
         while True:
-            print("Use the following short codes : cc - create a new account,dc - display password,fc -find a contact, ex -exit the contact list")
+            print("Use the following short codes : cc - create a new account,dc - display credentials,fc -find a contact, ex -exit the contact list")
             
             shorl_code = input().lower()
 
@@ -45,24 +45,24 @@ def main():
                 print("First name ")
                 first_name = input()
 
-                print("Password")
-                password = input()
+                print("credentials")
+                credentials = input()
 
                 print("account")
                 account = input()
-    save_password(create_password(first_name,account,passord)) # create and save new contact.
+    save_credentials(create_credentials(first_name,account,passord)) # create and save new contact.
                             print ('\n')
                             print(f"New Credentials {first_name} {passord} created")
                             print ('\n')
 
                     elif short_code == 'dc':
 
-                            if display_password():
+                            if display_credentials():
                                     print("Here is a list of all your accounts")
                                     print('\n')
 
-                                    for password in display_passwords():
-                                            print(f"{password.first_name} {password.password} .....{contact.phone_number}")
+                                    for credentials in display_credentialss():
+                                            print(f"{credentials.first_name} {credentials.credentials} .....{contact.phone_number}")
 
                                     print('\n')
                             else:
