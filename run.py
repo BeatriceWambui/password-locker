@@ -2,42 +2,43 @@ import unittest
 import pyperclip
 from password import Credentials
 from password import User
-def create_credentials(account,first_name,cls,password):
-    ''' 
-    function to create a new credentials
-    '''
-    new_credentials = Credentials(account,first_name,password) 
-    return new_credentials
-def save_credentials(credentials):
-    '''
-    function to create a new credentials for the user
-    '''
-    credentials.save_credentials()
-def delete_credentials(credentials):
-    '''
-    function to delete a users credentials for the user
-    '''
-    credentials.delete_credentials()
-def find_credentials(password):
-    '''
-    function that finds credentials by password
-    '''
-    return Credentials.find_by_password(password)
-def check_existing_credentials(first_name):
-    '''
-    function that checks if credentials exists with that name and returns a Boolean
-    '''
-    return Credentials.credentials_exist(first_name)
-def display_credentials():
-    '''
-    function that returns all saved credentials
-    '''
-    return Credentials.display_credentials()
 
-def main():
-    print("This is your credentials.Enter username ")
-    user_name = input()
-    print(f"Hello {user_name} This is your new credentials")
+        def create_credentials(account,first_name,cls,password):
+            ''' 
+            function to create a new credentials
+            '''
+            new_credentials = Credentials(account,first_name,password) 
+            return new_credentials
+        def save_credentials(credentials):
+            '''
+            function to create a new credentials for the user
+            '''
+            credentials.save_credentials()
+        def delete_credentials(credentials):
+            '''
+            function to delete a users credentials for the user
+            '''
+            credentials.delete_credentials()
+        def find_credentials(password):
+            '''
+            function that finds credentials by password
+            '''
+            return Credentials.find_by_password(password)
+        def check_existing_credentials(first_name):
+            '''
+            function that checks if credentials exists with that name and returns a Boolean
+            '''
+            return Credentials.credentials_exist(first_name)
+        def display_credentials():
+            '''
+            function that returns all saved credentials
+            '''
+            return Credentials.display_credentials()
+
+        def main():
+            print("This is your credentials.Enter username ")
+            user_name = input()
+            print(f"Hello {user_name} This is your new credentials")
 
     print('\n')
     while True:
