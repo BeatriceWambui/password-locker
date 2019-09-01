@@ -1,6 +1,6 @@
 import unittest # importing the unittest module
 import pyperclip
-class Password:
+class Credentials:
     '''
     This is a class that generates new instances of passwords
     '''
@@ -14,21 +14,21 @@ class Password:
 
         #__init__ nmethod that helps us define propreties for our objects.
 
-        password_list = [] # Empty array of password list
+        credentials_list = [] # Empty array of password list
 
-        def save_password(self):
+        def save_credentials(self):
             '''
             save_password method saves password objects into password_list
             '''
 
-            Password.password_list.append(self)
+            credentials.credentials_list.append(self)
 
-        def delete_password(self):
+        def delete_credentials(self):
             '''
-            delete_password method deletes a saved password from the password_list
+            delete_credentials method deletes a saved password from the password_list
             '''
 
-            Password.password_list.remove(self)
+            Credentials.credentials_list.remove(self)
 
         @classmethod
         def find_by_name(cls,first_name):
@@ -38,12 +38,12 @@ class Password:
                 name: first name to search for
                 returns: Password of person that matches the name.
                 '''
-                for password in cls.password_list:
-                    if password.first_name ==first_name:
-                        return password
+                for credentials in cls.credentials_list:
+                    if credentials.first_name ==first_name:
+                        return credentials
 
         @classmethod
-        def password_exist(cls,first_name):
+        def credentials_exist(cls,first_name):
             '''
             Method that checks if a password account exists from the password list.
             Args:
@@ -51,15 +51,17 @@ class Password:
             Returns:
             Boolean: True or false depending on if the password account exists
             '''
-            for password in cls.password_list:
-                if password.first_name == first_name:
+            for credentials in cls.credentials_list:
+                if credentials.first_name == first_name:
                     return True
             return False
 
         @classmethod
         def copy_password(cls,password):
-            password_found = Password.find_by_password(password)
+            credentials_found = Credentials.find_by_password(password)
             pyperclip.copy(password_found.password)
+
+
 
 if __name__ == '__main__':
     unittest.main() # provides a command line interface that collects all the tests methods and executes them
