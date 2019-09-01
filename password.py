@@ -5,6 +5,8 @@ class Credentials:
     This is a class that generates new instances of passwords
     '''
 
+        credentials_list = [] # Empty array of password list
+
     def __init__ (self,first_name,last_name,password):
         #docstring removed for simplicity
 
@@ -13,8 +15,6 @@ class Credentials:
         self.password = password
 
         #__init__ nmethod that helps us define propreties for our objects.
-
-        credentials_list = [] # Empty array of password list
 
         def save_credentials(self):
             '''
@@ -60,6 +60,40 @@ class Credentials:
         def copy_password(cls,password):
             credentials_found = Credentials.find_by_password(password)
             pyperclip.copy(credentials_found.password)
+
+class User:
+    '''
+    Class that generates new instancesof User
+    '''
+    user_list = [] # list of usere to be stored here
+
+    def __init__(self,username,password):
+        '''
+        saving user credentials into user_list for login
+        '''
+        self.username = username
+        self.password =password
+
+    def save_user(self):
+        '''
+        saves a user
+        '''
+        User.user_list.append(self)
+
+    def delete_user(self):
+        '''
+        deletes a user account that exists
+        '''
+        User.user_list.remove(self)
+
+    @classmethod
+    def find_user(cls,username):
+        '''
+        search terms used to find username
+        '''
+        for user in cls.user_list:
+            if user.username == username:
+                return user
 
 
 
