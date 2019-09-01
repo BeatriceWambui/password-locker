@@ -38,7 +38,7 @@ def main():
     print(f"Hello {user_name} This is your new credentials")
 
     print('\n')
-        while True:
+    while True:
             print("Use the following short codes : cc - create a new account,dc - display credentials,fc -find a contact, ex -exit the contact list")
             
             shorl_code = input().lower()
@@ -55,12 +55,11 @@ def main():
 
                 print("account")
                 account = input()
-    save_credentials(create_credentials(first_name,account,passord)) # create and save new contact.
-                            print ('\n')
-                            print(f"New Credentials {first_name} {passord} created")
-                            print ('\n')
-
-                    elif short_code == 'dc':
+                save_credentials(create_credentials(first_name,account,passord)) # create and save new contact.
+                print ('\n')
+                print(f"New Credentials {first_name} {passord} created")
+                print ('\n')
+            elif short_code == 'dc':
 
                             if display_credentials():
                                     print("Here is a list of all your accounts")
@@ -75,7 +74,7 @@ def main():
                                     print("You dont seem to have any credentials saved yet")
                                     print('\n')
 
-                    elif short_code == 'fc':
+            elif short_code == 'fc':
 
                             print("Enter the password you want to search for")
 
@@ -88,12 +87,12 @@ def main():
                                     print(f"first_name.......{search_credentials.first_name}")
                                     print(f"password.......{search_password}")
                             else:
-                                    print("That password does not exist")
+                                    print("That  does not exist")
 
-                    elif short_code == "ex":
-                            print("Bye .......")
+            elif short_code == "ex":
+                            print("Thankyou")
                             break
-                    else:
+             else:
                             print("I really didn't get that. Please use the short codes")
 
 
