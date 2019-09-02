@@ -54,12 +54,6 @@ class Credentials:
             if credentials.first_name == first_name:
                 return True
             return False
-
-    # @classmethod
-    # def copy_password(cls,password):
-    #     credentials_found = Credentials.find_by_first_name(first_name)
-    #     pyperclip.copy(credentials_found.password)
-
 class User:
     '''
     cls that generates new instances of User

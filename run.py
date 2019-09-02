@@ -30,11 +30,6 @@ def check_existing_credentials(first_name):
     function that checks if credentials exists with that name and returns a Boolean
     '''
     return Credentials.credentials_exist(first_name)
-# def display_credentials():
-#     '''
-#     function that returns all saved credentials
-#     '''
-#     return Credentials.display_credentials()
 
 def main():
     print("This is your credentials.Enter username ")
@@ -66,36 +61,7 @@ while True:
         print ('\n')
         print(f"New Credentials {first_name} {password} created")
         print ('\n')
-    # elif short_code == 'dc':
-
-    #     if display_credentials():
-    #         print("Here is a list of all your accounts")
-    #         print('\n')
-
-    #         for credentials in display_credentials():
-    #                 print(f"{credentials.first_name} {credentials.password} .....{credentials.account}")
-
-    #         print('\n')
-    #     else:
-    #         print('\n')
-    #         print("You dont seem to have any credentials saved yet")
-    #         print('\n')
-
-    # elif short_code == 'fc':
-
-    #     print("Enter the password you want to search for")
-
-    #     search_password = input()
-    #     if check_existing_credentials(search_password):
-    #         search_password = find_password(search_password)
-    #         print(f"{search_credentials.first_name} {search_credentials.account}")
-    #         print('-' * 20)
-
-    #         print(f"first_name.......{search_credentials.first_name}")
-    #         print(f"password.......{search_password}")
-    #     else:
-    #         print("That  does not exist")
-
+   
     elif short_code == "ex":
         # print("Thankyou")
         break
